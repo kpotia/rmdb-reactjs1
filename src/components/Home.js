@@ -10,7 +10,7 @@ import Grid from './Grid';
 import Thumb from './Thumb';
 import Spinner from './Spinner';
 import SearchBar from './SearchBar';
-
+import Button from './Button';
 
 // Hooks
 import { useMovieFetch } from '../hooks/useMovieFetch'
@@ -19,9 +19,12 @@ import NoImage from '../images/no_image.jpg';
 
 const Home = () => {
     
-    const {state, loading, error,searchTerm, setSearchTerm} = useMovieFetch();
+    const {state, loading, error,searchTerm, setSearchTerm, setIsLoadingMore} = useMovieFetch();
 
     console.log(state);
+
+    if(error) return <div>Something went wrong ...</div>
+
     return (
         <>
             { !searchTerm  && state.results[0] ?
@@ -48,7 +51,11 @@ const Home = () => {
                 />
             ))}
         </Grid>
-        <Spinner />
+        {loading && <Spinner />}
+        
+        {state.page < state.total_pages && !loading && (
+            <Button callback text='Load More' callback={()=>setIsLoadingMore(true)}/>
+        ) }
         </>
       )
 }
