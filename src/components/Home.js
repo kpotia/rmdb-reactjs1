@@ -13,13 +13,15 @@ import SearchBar from './SearchBar';
 import Button from './Button';
 
 // Hooks
-import { useMovieFetch } from '../hooks/useMovieFetch'
+import { useHomeFetch } from '../hooks/useHomeFetch'
 // Image
 import NoImage from '../images/no_image.jpg';
+import { BrowserRouter } from 'react-router-dom';
+import reactDom from 'react-dom';
 
 const Home = () => {
     
-    const {state, loading, error,searchTerm, setSearchTerm, setIsLoadingMore} = useMovieFetch();
+    const {state, loading, error,searchTerm, setSearchTerm, setIsLoadingMore} = useHomeFetch();
 
     console.log(state);
 
