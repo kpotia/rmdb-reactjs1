@@ -1,6 +1,5 @@
-import react from 'react';
-// API
-import API from '../API';
+import React from 'react';
+
 // config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL} from '../config';
 
@@ -16,8 +15,7 @@ import Button from './Button';
 import { useHomeFetch } from '../hooks/useHomeFetch'
 // Image
 import NoImage from '../images/no_image.jpg';
-import { BrowserRouter } from 'react-router-dom';
-import reactDom from 'react-dom';
+
 
 const Home = () => {
     
