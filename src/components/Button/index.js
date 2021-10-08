@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // styles 
 import { Wrapper } from './Button.style';
@@ -9,6 +10,11 @@ import { Wrapper } from './Button.style';
             {text}
         </Wrapper>
     )
+}
+
+Wrapper.propTypes = {
+    text: PropTypes.string,
+    callback: PropTypes.func,
 }
 
 export default Button;
