@@ -9,11 +9,11 @@ const Thumb = ({image, movieId, clickable, alt}) => (
     <div>
         {clickable ? (
             <Link to={`/${movieId}`}>
-                <Image alt={alt} src={image} alt='movie-thumb' />
+                <Image alt={alt} src={image} />
 
             </Link>
         ):(
-            <Image alt={alt} src={image} alt='movie-thumb' />
+            <Image alt={alt} src={image} />
             )
         }
     </div>
