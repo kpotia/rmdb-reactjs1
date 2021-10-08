@@ -18,8 +18,8 @@ const BreadCrumb = ({movieTitle}) => (
         </Wrapper>
     );
 
-    BreadCrumb.propTypes = {
-        movieTitle: PropTypes.string,
-    }
+    // BreadCrumb.propTypes = {
+    //     movieTitle: PropTypes.string,
+    // }
 
 export default BreadCrumb;
